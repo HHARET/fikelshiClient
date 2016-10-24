@@ -1,49 +1,49 @@
 <navbar></navbar>
 <md-content flex layout="column" class="content" layout-align="start center">
 <section layout="column" layout-align="start center">
-<h1>Signup</h1>
+<h1>إشتراك</h1>
 
 		<form name="form" ng-submit="signup.register(form)" novalidate>
 
 			<section class="section" layout="column">
 				<md-input-container md-is-error="form.name.$error.required && form.name.$dirty">
-					<label>Name</label>
+					<label>الإسم</label>
 					<input name="name" ng-model="signup.user.name" required md-autofocus/>
 					<div ng-messages="form.name.$error" ng-if="form.name.$dirty">
-						<div ng-message="required">Name is required</div>
+						<div ng-message="required">يجب إدخال الإسم</div>
 					</div>
 				</md-input-container>
 
 				<md-input-container flex md-is-error="(form.email.$error.email || form.email.$error.required || form.email.$error.mongoose || form.email.$error.remote-unique) && form.email.$dirty">
-					<label>Email ID</label>
+					<label>البريد الإلكتروني</label>
 					<input type="email" name="email" ng-model="signup.user.email"
 								 ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}"
 								 required mongoose-error>
 					<div ng-messages="form.email.$error" ng-if="form.email.$dirty">
-						<div ng-message="email">Please enter a valid email address.</div>
-						<div ng-message="required">Email is required</div>
-						<div ng-message="mongoose">Email already in use</div>
+						<div ng-message="email">الرجاء إدخال بريد الكتروني فعال.</div>
+						<div ng-message="required">البريد الإلكتروني مطلوب</div>
+						<div ng-message="mongoose">البريد الإلكتروني موجود مسبقا</div>
 					</div>
 				</md-input-container>
 
 
 				<md-input-container md-is-error="(form.password.$error.required ||  form.password.$error.mongoose || form.password.$error.minlength) && form.password.$dirty">
-					<label>Password</label>
+					<label>كلمة المرور</label>
 					<input name="password" type="password" ng-model="signup.user.password" required mongoose-error ng-minlength="3"/>
 					<div ng-messages="form.password.$error" ng-if="form.password.$dirty">
-						<div ng-message="required">Password is required</div>
+						<div ng-message="required">كلمة المرور مطلوبة</div>
 						<div ng-message="mongoose">{{ errors.password }}</div>
-						<div ng-message="minlength">Password must be at least 3 characters.</div>
+						<div ng-message="minlength">يجب ان تكون كلمة المرور 3 أحرف على الأقل.</div>
 					</div>
 				</md-input-container>
 
 				<md-input-container flex class="last" md-is-error="(form.passwordRepeat.$error.required ||  form.passwordRepeat.$error.minlength || form.passwordRepeat.$error.repeat-input) && form.passwordRepeat.$dirty">
-					<label>Repeat Password</label>
+					<label>الرجاء إدخال كلمة المرور مرة أخرى</label>
 					<input name="passwordRepeat" type="password"  ng-model="signup.user.passwordRepeat" required repeat-input="signup.user.password" ng-minlength="3">
 					<div ng-messages="form.passwordRepeat.$error" ng-if="form.passwordRepeat.$dirty">
-						<div ng-message="required">Please repeat the new password</div>
-						<div ng-message="minlength">Password must be at least 3 characters.</div>
-						<div ng-message="repeat-input">The passwords do not match</div>
+						<div ng-message="required">الرجاء إعادة إدخال كلمة المرور الجديدة</div>
+						<div ng-message="minlength">يجب أن تكون كلمة المرور 3 أحرف على الأقل.</div>
+						<div ng-message="repeat-input">كلمة المرور غير متطابقة</div>
 					</div>
 				</md-input-container>
 
@@ -53,10 +53,10 @@
 	<div class="md-dialog-actions" layout="row">
 		<span flex></span>
 		<md-button ng-disabled="form.$invalid || signup.loading" class="md-primary md-raised circular-progress-button" type="submit" aria-label="SignUp">
-			<span ng-show="!signup.loading"><ng-md-icon icon="input"></ng-md-icon> Signup</span>
-			<md-progress-circular md-mode="indeterminate" md-diameter="25" ng-show="signup.loading" class="md-accent md-hue-1"></md-progress-circular><span ng-show="signup.loading">Loading...</span>
+			<span ng-show="!signup.loading"><ng-md-icon icon="input"></ng-md-icon> إشتراك</span>
+			<md-progress-circular md-mode="indeterminate" md-diameter="25" ng-show="signup.loading" class="md-accent md-hue-1"></md-progress-circular><span ng-show="signup.loading">تحميل ...</span>
 		</md-button>
-		<md-button ng-click="signup.cancel();" aria-label="Cancel SignUp">Cancel</md-button>
+		<md-button ng-click="signup.cancel();" aria-label="Cancel SignUp">إغلاق</md-button>
 	</div>
 </form>
 </section>
