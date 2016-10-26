@@ -1,7 +1,7 @@
 <navbar leftmenu="true"></navbar>
 <left-menu></left-menu>
 <div layout-align="start center" layout="column">
-<h2 class="md-title">Media Library</h2>
+<h2 class="md-title">مكتبة الوسائط</h2>
 <md-progress-linear md-mode="determinate" value="{{progress}}" class="md-warn" ng-show="progress >= 0"></md-progress-linear>
 <!-- <span class="progress">
 	<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
@@ -11,14 +11,14 @@
 	<div ngf-drop ngf-select ng-model="files" class="drop-box"
 			ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
 			accept="image/*"
-			ngf-pattern="'image/*'">Drop images here to upload<br/>
-			or <br/>
+			ngf-pattern="'image/*'">اضف صورة هنا للتحميل<br/>
+			أو <br/>
 		<md-button tabindex="0"
 		class="md-button md-default-theme md-warn md-raised"
 		ngf-multiple="true"
 		aria-label="Open file select panel"
 		ngf-select="upload($files)">
-			<ng-md-icon icon="cloud"></ng-md-icon> Select Files
+			<ng-md-icon icon="cloud"></ng-md-icon> حدد الملفات
 		</md-button>
 	</div>
 
